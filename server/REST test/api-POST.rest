@@ -1,0 +1,9 @@
+POST http://localhost:8080/notepads
+Content-Type: application/json
+
+{
+    "title": "title",
+    "subtitle": "subtitle",
+    "content": "content",
+    "created_at": "created_at"
+}

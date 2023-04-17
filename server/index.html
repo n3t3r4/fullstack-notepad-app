@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <h2 class="teste">CRUD example</h2>
+
+  <input type="text" class="proprety" placeholder="proprety" />
+
+  <input type="text" class="value" placeholder="value" />
+
+  <br />
+  <br />
+
+  <button
+    onclick="fetch('/api/user').then( async (data) => {
+    const userData = await data.json();
+    console.log(userData)
+    console.log(`GET Request Status: ${data.status}`);
+    })"
+  >
+    GET
+  </button>
+
+  <button
+    onclick="
+    /* const value = document.querySelector('#value');
+    const proprety = document.querySelector('#proprety');
+    console.log(`${proprety.value}: ${value.value.toString()}`); */
+    fetch('/api/user', {method: 'POST'}).then((data)=>{
+      console.log(`POST Request Status: ${data.status}`);
+    })
+    "
+  >
+    POST
+  </button>
+
+  <button
+    onclick="
+  fetch('/api/user', {method: 'PUT'}).then((data)=>{
+    console.log(`PUT Request Status: ${data.status}`);
+  })
+  "
+  >
+    PUT
+  </button>
+
+  <button
+    onclick="
+  fetch('/api/user', {method: 'PATCH'}).then((data)=>{
+    console.log(`PATCH Request Status: ${data.status}`);
+  })
+  "
+  >
+    PATCH
+  </button>
+
+  <button
+    onclick="
+  fetch('/api/user', {method: 'DELETE'}).then((data)=>{
+    console.log(`DELETE Request Status: ${data.status}`);
+  })
+  "
+  >
+    DELETE
+  </button>
+  <script src="./index.js"></script>
+</body>
